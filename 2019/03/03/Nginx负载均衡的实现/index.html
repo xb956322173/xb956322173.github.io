@@ -79,13 +79,20 @@
 
 
 
-<meta property="og:type" content="website">
+<meta name="description" content="1、Nginx安装1.1 安装依赖1yum install gcc openssl-devel pcre-devel zlib-devel -y 1.2 下载与安装官方网站下载 根据自己的系统版本下载对应版本的压缩包 上传至服务器 解压缩 1tar -zxvf nginx-1.8.1.tar.gz 进入解压后的目录,设置安装的目录,/usr/soft/nginx为你要安装的路径 1./config">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Xing Bo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/03/03/Nginx负载均衡的实现/index.html">
 <meta property="og:site_name" content="Xing Bo">
+<meta property="og:description" content="1、Nginx安装1.1 安装依赖1yum install gcc openssl-devel pcre-devel zlib-devel -y 1.2 下载与安装官方网站下载 根据自己的系统版本下载对应版本的压缩包 上传至服务器 解压缩 1tar -zxvf nginx-1.8.1.tar.gz 进入解压后的目录,设置安装的目录,/usr/soft/nginx为你要安装的路径 1./config">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="c:/Users/xing/AppData/Roaming/Typora/typora-user-images/1551599442011.png">
+<meta property="og:image" content="c:/Users/xing/AppData/Roaming/Typora/typora-user-images/1551599484559.png">
+<meta property="og:updated_time" content="2019-03-03T07:53:31.804Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xing Bo">
+<meta name="twitter:description" content="1、Nginx安装1.1 安装依赖1yum install gcc openssl-devel pcre-devel zlib-devel -y 1.2 下载与安装官方网站下载 根据自己的系统版本下载对应版本的压缩包 上传至服务器 解压缩 1tar -zxvf nginx-1.8.1.tar.gz 进入解压后的目录,设置安装的目录,/usr/soft/nginx为你要安装的路径 1./config">
+<meta name="twitter:image" content="c:/Users/xing/AppData/Roaming/Typora/typora-user-images/1551599442011.png">
 
 
 
@@ -115,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/03/Nginx负载均衡的实现/">
 
 
 
 
 
-  <title>Xing Bo</title>
+  <title> | Xing Bo</title>
   
 
 
@@ -140,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -214,9 +220,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/03/Nginx负载均衡的实现/" itemprop="url">Untitled</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -298,9 +302,7 @@
       
 
       
-        
-          
-            <h2 id="1、Nginx安装"><a href="#1、Nginx安装" class="headerlink" title="1、Nginx安装"></a>1、Nginx安装</h2><h3 id="1-1-安装依赖"><a href="#1-1-安装依赖" class="headerlink" title="1.1 安装依赖"></a>1.1 安装依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc openssl-devel pcre-devel zlib-devel -y</span><br></pre></td></tr></table></figure>
+        <h2 id="1、Nginx安装"><a href="#1、Nginx安装" class="headerlink" title="1、Nginx安装"></a>1、Nginx安装</h2><h3 id="1-1-安装依赖"><a href="#1-1-安装依赖" class="headerlink" title="1.1 安装依赖"></a>1.1 安装依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc openssl-devel pcre-devel zlib-devel -y</span><br></pre></td></tr></table></figure>
 <h3 id="1-2-下载与安装"><a href="#1-2-下载与安装" class="headerlink" title="1.2 下载与安装"></a>1.2 下载与安装</h3><p><a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">官方网站下载</a></p>
 <p>根据自己的系统版本下载对应版本的压缩包</p>
 <p>上传至服务器</p>
@@ -347,8 +349,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">http &#123; </span><br><span class="line">    upstream siworae&#123; </span><br><span class="line">    	ip_hash;</span><br><span class="line">        server srv1.example.com;</span><br><span class="line">        server srv2.example.com; </span><br><span class="line">        server srv3.example.com; </span><br><span class="line">    &#125; </span><br><span class="line">    server &#123; </span><br><span class="line">        listen 80; </span><br><span class="line">	server_name  localhost;</span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass http://siworae;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上述的循环或最少连接数的负载平衡方法，每个后续客户端的请求都可能被分发到不同的服务器。不能保证相同的客户端总是定向到相同的服务器。如果需要将客户端绑定到特定的应用程序服务器，换句话说，就是始终选择相同的服务器而言，就要使客户端的会话“粘滞”或“持久” ，ip-hash负载平衡机制就是有这种特性。</p>
 
-          
-        
       
     </div>
     
@@ -365,132 +365,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/test/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xing Bo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xing Bo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/14/test/" itemprop="url">test</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-14T18:02:07+08:00">
-                2019-01-14
-              </time>
+              <a href="/2019/01/14/test/" rel="next" title="test">
+                <i class="fa fa-chevron-left"></i> test
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p><a href="https://siworae.github.io/p/ae3b3943/" target="_blank" rel="noopener">https://siworae.github.io/p/ae3b3943/</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -500,138 +396,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/08/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xing Bo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Xing Bo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/08/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-08T14:34:07+08:00">
-                2019-01-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -639,6 +408,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -659,8 +432,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -702,6 +484,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、Nginx安装"><span class="nav-number">1.</span> <span class="nav-text">1、Nginx安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-安装依赖"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-下载与安装"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 下载与安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-配置nginx"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 配置nginx</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、Nginx的配置"><span class="nav-number">2.</span> <span class="nav-text">2、Nginx的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-轮询配置"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 轮询配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-加权配置"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 加权配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-最少连接配置"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 最少连接配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-ip-hsah"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 ip-hsah</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -835,6 +633,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
